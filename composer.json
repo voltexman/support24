@@ -1,0 +1,24 @@
+{
+    "name": "designstorm/lev",
+    "type": "project",
+    "authors": [
+        {
+            "name": "voltexman",
+            "email": "voltexman@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/php-view": "^2.2",
+        "slim/twig-view": "^2.4",
+        "slim/pdo": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "backend\\": "backend/",
+            "frontend\\": "frontend/",
+            "core\\": "common/"
+        }
+    }
+}
