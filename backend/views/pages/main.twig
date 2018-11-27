@@ -1,0 +1,198 @@
+{% extends '@backend/layouts/default.tpl.twig' %}
+
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Всего посетителей</p>
+                <h2><span data-plugin="counterup">34578 </span><small> <i class="mdi mdi-arrow-up text-success"></i></small></h2>
+                <p class="text-muted m-0"><b>Last:</b> 30.4k</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-account-convert widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User Today">Сегодня</p>
+                <h2><span data-plugin="counterup">895 </span><small><i class="mdi mdi-arrow-down text-danger"></i></small></h2>
+                <p class="text-muted m-0"><b>Last:</b> 1250</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-layers widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User This Month">За неделю</p>
+                <h2><span data-plugin="counterup">52410 </span><small><i class="mdi mdi-arrow-up text-success"></i></small></h2>
+                <p class="text-muted m-0"><b>Last:</b> 40.33k</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-chart-areaspline widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="Statistics">Подписчиков</p>
+                <h2><span data-plugin="counterup">81 </span></h2>
+                <p class="text-muted m-0"><b>Last:</b> 30.4k</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-account-convert widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User Today">Комментариев</p>
+                <h2><span data-plugin="counterup">895 </span></h2>
+                <p class="text-muted m-0"><b>Last:</b> 1250</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+        <div class="card-box widget-box-one">
+            <i class="mdi mdi-layers widget-one-icon"></i>
+            <div class="wigdet-one-content">
+                <p class="m-0 text-uppercase font-600 font-secondary text-overflow" title="User This Month">Заказов</p>
+                <h2><span data-plugin="counterup">50 </span></h2>
+                <p class="text-muted m-0"><b>Last:</b> 40.33k</p>
+            </div>
+        </div>
+    </div><!-- end col -->
+
+</div>
+<!-- end row -->
+
+<div class="row">
+	<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+		<div class="card-box">
+	        <h4 class="header-title">Line Charts</h4>
+	        <p class="text-muted font-13">
+	            Display as line Chart.Your awesome text goes here.
+	        </p>
+
+	        <div class="">
+	            <div id="sparkline1"></div>
+	        </div>
+    	</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
+        <div class="card-box">
+            <h4 class="header-title m-t-0 m-b-30">Заказанные услуги</h4>
+			{{ orders.date }}
+			{% if orders %}
+            <div class="table-responsive">
+                <table class="table table table-hover m-0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ФИО</th>
+                            <th>Услуга</th>
+                            <th>Телефон</th>
+                            <th>Дата</th>
+                            <th>Сообщение</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	{% for order in orders %}
+                        <tr>
+                            <th></th>
+                            <td>
+                                <h5 class="m-0">{{ order.fio }}</h5>
+                                <p class="m-0 text-muted font-13"><small>{{ order.location }}</small></p>
+                            </td>
+                            <td>{{ order.service }}</td>
+                            <td>{{ order.phone }}</td>
+                            <td>{{ order.date }}</td>
+                            <td>
+	                            {% if order.message %}
+	                            <span data-container="body" title="" data-toggle="popover" data-placement="top" data-content="{{ order.message }}" data-original-title="{{ order.fio }} пишет:"><i class="mdi mdi-message-text-outline" style="font-size: 19px"></i></span>
+	                            {% else %}
+	                            <span>Не указано</span>
+	                            {% endif %}
+                        	</td>
+                            {% if order.status == 'Новый' %}
+                            <td><span class="label label-success">{{ order.status }}</span></td>
+                            {% elseif order.status == 'Выполняется' %}
+                            <td><span class="label label-warning">{{ order.status }}</span></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div> <!-- table-responsive -->
+
+            {% else %}
+            <center><h5>Новых заказов нет</h5></center>
+            {% endif %}
+
+        </div> <!-- end card -->
+    </div>
+    <!-- end col -->
+</div>
+<!-- end row -->
+{% endblock %}
+
+
+{% block footer %}
+{{ parent() }}
+
+<script src="/backend/web/plugins/counterup/jquery.counterup.min.js"></script>
+
+<!-- Sparkline charts -->
+<script src="/backend/web/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script>
+/**
+* Theme: Zircos Admin Template
+* Author: Coderthemes
+* Component: Sparkline Chart
+* 
+*/
+$( document ).ready(function() {
+    
+    var DrawSparkline = function() {
+        $('#sparkline1').sparkline([0, 23, 43, 35, 44, 45, 56, 37, 40], {
+            type: 'line',
+            width: $('#sparkline1').width(),
+            height: '165',
+            chartRangeMax: 50,
+            lineColor: '#4bd396',
+            fillColor: 'rgba(75, 211, 150, 0.3)',
+            highlightLineColor: 'rgba(0,0,0,.1)',
+            highlightSpotColor: 'rgba(0,0,0,.2)',
+        });
+
+        $('#sparkline1').sparkline([25, 23, 26, 24, 25, 32, 30, 24, 19], {
+            type: 'line',
+            width: $('#sparkline1').width(),
+            height: '165',
+            chartRangeMax: 40,
+            lineColor: '#f5707a',
+            fillColor: 'rgba(245, 112, 122, 0.3)',
+            composite: true,
+            highlightLineColor: 'rgba(0,0,0,.1)',
+            highlightSpotColor: 'rgba(0,0,0,.2)',
+        });
+    };
+    DrawSparkline();
+
+    var resizeChart;
+});
+</script>
+
+
+{% endblock %}

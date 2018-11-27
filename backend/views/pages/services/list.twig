@@ -1,0 +1,44 @@
+{%extends 'layouts/default.php'%}
+
+
+{%block pagetitle%}
+<h4 class="page-title">Послуги</h4>
+{%endblock%}
+
+{%block content%}
+
+<div class="col-md-12">
+	<div class="card-box">
+        <h4 class="m-t-0 header-title"><b>Primary Table</b></h4>
+        <p class="text-muted font-13 m-b-20">
+            Use Class <code>.table-colored .table-primary</code>
+        </p>
+
+		<div class="table-responsive">
+            <table class="table m-0 table-colored table-primary">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Назва послуги</th>
+                        <th>Переглядів</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td></td>
+                        <td>
+                            <button class="btn btn-primary waves-effect btn-sm">Редагувати</button>
+                            <button class="btn btn-icon waves-effect waves-light btn-danger btn-sm"> <i class="fa fa-remove"></i> </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+	</div>
+
+</div>
+
+{%endblock%}

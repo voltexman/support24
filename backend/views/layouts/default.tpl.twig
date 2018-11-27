@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {%block head%}
+    {% include '@backend/html/head.html.twig' %}
+    {%endblock%}
+    </head>
+
+
+    <body class="fixed-left">
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            {% include '@backend/html/topbar.html' %}
+
+
+            {% include '@backend/html/sidebar.html' %}
+
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    {%block pagetitle%}
+                                    <h4 class="page-title">Панель управления</h4>
+                                    {%endblock%}
+                                    <ol class="breadcrumb p-0 m-0">
+                                        <li>
+                                            <a href="index.html#">Zircos</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.html#">Dashboard</a>
+                                        </li>
+                                        <li class="active">
+                                            Dashboard
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+
+                        {%block content%}
+                        {%endblock%}
+
+
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+
+                <footer class="footer text-right">
+                    2018 Розроблено спеціально для Ігоря
+                </footer>
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+
+
+        {%block footer%}
+        {% include '@backend/html/footer.html.twig' %}
+        {%endblock%}
+
+    </body>
+</html>

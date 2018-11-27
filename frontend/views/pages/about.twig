@@ -1,0 +1,67 @@
+{% extends '@frontend/layouts/default.tpl.twig' %}
+
+
+{% block content %}
+    <!--Banner Section-->
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-content">
+                        <h1 class="page-titile">{{ about.name }}</h1>
+                        <ul class="banner-nav pull-right">
+                            <li><a href="index.php.html">Home</a></li>
+                            <li><a href="service-details.php.html#"><span class="fa fa-angle-right"></span></a></li>
+                            <li><a href="index.php.html">Service</a></li>
+                            <li><a href="service-details.php.html#"><span class="fa fa-angle-right"></span></a></li>
+                            <li class="active"><a href="service-details.php.html#">Service Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="full-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="history-detail margin-bottom-30 padding30">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="section-title-area-left">
+                                    <h3 class="section-title">Company History</h3>
+                                    <span class="sub-title">Fames justo fermentum eros dictum ornare sapien pellentesque ante fames ridiculus duis, sociosqu, sagittis cubilia sapien. Venenatis libero vel facilisis.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>{{ about.text }}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <ul class="history-list">
+                        <li>
+                            <span>2016 - 2017</span>
+                            <h5 class="thumb-title">More advance technology we updated</h5>
+                            <p>Ad euismod. Purus mollis suscipit, mattis integer cum accumsan lobortis scelerisque dolor metus torquent curae; luctus. Justo pharetra lorem sociis lectus integer litora libero fames, sapien justo sem <a class="btn-link" href="about-us.php.html#">Continue...</a></p>
+                        </li>
+                        <li>
+                            <span>2013 - 2015</span>
+                            <h5 class="thumb-title">Our best achivement of the National Award</h5>
+                            <p>Ad euismod. Purus mollis suscipit, mattis integer cum accumsan lobortis scelerisque dolor metus torquent curae; luctus. Justo pharetra lorem sociis lectus integer litora libero fames, sapien justo sem <a class="btn-link" href="about-us.php.html#">Continue...</a></p>
+                        </li>
+                        <li>
+                            <span>2009 - 2012</span>
+                            <h5 class="thumb-title">Become a best sicurity service company and new anouncement</h5>
+                            <p>Ad euismod. Purus mollis suscipit, mattis integer cum accumsan lobortis scelerisque dolor metus torquent curae; luctus. Justo pharetra lorem sociis lectus integer litora libero fames, sapien justo sem <a class="btn-link" href="about-us.php.html#">Continue...</a></p>
+                        </li>
+                        <li>
+                            <span>2003 - 2008</span>
+                            <h5 class="thumb-title">Added data storage sicurity service and internet sicurity</h5>
+                            <p>Ad euismod. Purus mollis suscipit, mattis integer cum accumsan lobortis scelerisque dolor metus torquent curae; luctus. Justo pharetra lorem sociis lectus integer litora libero fames, sapien justo sem <a class="btn-link" href="about-us.php.html#">Continue...</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

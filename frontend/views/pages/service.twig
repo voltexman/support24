@@ -1,0 +1,82 @@
+{% extends '@frontend/layouts/default.tpl.twig' %}
+
+{% block content %}
+
+    <!--Banner Section-->
+    <section id="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="banner-content">
+                        <h1 class="page-titile">{{ service.name }}</h1>
+                        <ul class="banner-nav pull-right">
+                            <li><a href="index.php.html">Home</a></li>
+                            <li><a href="service-details.php.html#"><span class="fa fa-angle-right"></span></a></li>
+                            <li><a href="index.php.html">Service</a></li>
+                            <li><a href="service-details.php.html#"><span class="fa fa-angle-right"></span></a></li>
+                            <li class="active"><a href="service-details.php.html#">Service Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- General Support -->
+    <section class="full-row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4">
+                    <ul class="service-list">
+                        {% for service in list %}
+                            <li><a href="/service/{{ service.alias }}"><span class="icon-item"></span> {{ service.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <div class="get-quote bg-gray padding30 margin-top-30">
+                        <h4 class="inner-title">Get a Queto</h4>
+                        <p>Luctus ad class mollis lobortis etiam urna habitant consequat sem fusce vivamus nisl viverra rhoncus, ornare pellentesque hendrerit vehicula tempor non. Facilisis ac. Ipsum risus mollis quam at. Elit tortor.</p>
+                        <a class="btn btn-primary" href="service-details.php.html#">Get a quote</a> </div>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="images/service/1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="service-detail-content">
+
+                        {{ service.text }}
+
+                        {#<div class="row">#}
+                            {#<div class="margin-30">#}
+                                {#<div class="col-md-4">#}
+                                    {#<div class="special-service-item text-center">#}
+                                        {#<span class="flaticon-security-on bg-default"></span>#}
+                                        {#<h5 class="thumb-title">Sequre Payment</h5>#}
+                                        {#<p>Fames condimentum hendrerit at hymenaeos pellentesque donec ornare sociis sociosqu.</p>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="col-md-4">#}
+                                    {#<div class="special-service-item text-center">#}
+                                        {#<span class="flaticon-account-passkey bg-default"></span>#}
+                                        {#<h5 class="thumb-title">Best Data Security</h5>#}
+                                        {#<p>Fames condimentum hendrerit at hymenaeos pellentesque donec ornare sociis sociosqu.</p>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="col-md-4">#}
+                                    {#<div class="special-service-item text-center">#}
+                                        {#<span class="flaticon-policeman bg-default"></span>#}
+                                        {#<h5 class="thumb-title">Qualified Guardst</h5>#}
+                                        {#<p>Fames condimentum hendrerit at hymenaeos pellentesque donec ornare sociis sociosqu.</p>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
