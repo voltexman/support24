@@ -1,0 +1,11 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php
+
+RewriteRule \.(php|htm|html|swf|fla|xml|ico|jpg|gif|png|js|css|woff(.*)|woff2(.*)|ttf(.*))$ - [L]
+RewriteBase /
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
